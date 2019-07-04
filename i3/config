@@ -1,0 +1,323 @@
+# CONFIG FILE I3
+# Guide: https://i3wm.org/docs/userguide.html
+
+
+#=============================================================================
+# PROGRAM USED
+#=============================================================================
+set $msg                telegram
+set $terminal           termite 
+set $code               code
+set $office             libreoffice
+set $textEditor         gedit
+set $browser            chromium
+set $fileManager        terminator -e ranger 
+set $comunication       discord
+set $music              spotify
+
+
+
+#=============================================================================
+# VARIABLES
+#=============================================================================
+# mod key = SUPER
+set $mod Mod4 
+
+# workspaces names
+set $ws_msg             "1"
+set $ws_terminal        "2"
+set $ws_code            "3"
+set $ws_browser         "4"
+set $ws_fileManager     "5"
+set $ws_office          "6"
+set $ws_paint           "7"
+set $ws_comunication    "9"
+set $ws_music           "10"
+
+# (Arrows are default. You can use alternatively: l-ograve-k-j)
+set $up Up
+set $right Right
+set $down Down
+set $left Left
+
+set $pixelResize 5
+set $font "Monospace 12"
+
+
+
+#=============================================================================
+# WINDOWS
+#=============================================================================
+# to get the class and instance, you can use xprop
+
+# borders
+default_border pixel 3
+hide_edge_borders both
+
+# for i3-gaps
+gaps inner 10
+gaps inner 10
+
+# floating windows
+for_window [class="Pavucontrol"] floating enable
+for_window [urgent="latest" class="TelegramDesktop"] focus
+
+# assegnament_ workspace programmi
+assign [class="libreoffice"]            $ws_office
+assign [class="^TelegramDesktop$"]      $ws_msg
+assign [class="^Chromium$"]             $ws_browser
+assign [class="^Inkscape$"]             $ws_paint
+assign [class="^discord$"]              $ws_comunication
+assign [class="^Termite$" instance="FirstTerminal"] $ws_terminal
+assign [class="Spotify"]                $ws_music
+
+
+
+
+#=============================================================================
+# STARTUP PROGRAMS
+#=============================================================================
+exec $msg
+exec --no-startup-id $browser
+exec --no-startup-id $music
+exec --no-startup-id $terminal --name=FirstTerminal -e 'bash -c "neofetch; exec bash"'
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id "nm-applet"
+exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id "redshift -l 45.073132:7.691706"
+exec --no-startup-id udiskie --tray --no-notify
+#exec --no-startup-id "xrandr --output DP-0 --auto --primary --output HDMI-0 --off"
+
+exec_always --no-startup-id $HOME/github/dotfiles/polybar/launch.sh
+exec_always compton --config $HOME/github/dotfiles/compton/config
+#exec_always --no-startup-id "xrdb $HOME/.Xresources"
+
+
+
+#=============================================================================
+# SETTINGS
+#=============================================================================
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango: $font
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+
+
+#=============================================================================
+# CUSTOM BINDING COMMANDS
+#=============================================================================
+#to get the current mapping of your keys, use xmodmap -pke
+#To interactively enter a key and see what keysym it is configured to, use xev
+
+# switch display
+bindsym $mod+F11 	    exec --no-startup-id "xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0"
+bindsym $mod+Shift+F11 	exec --no-startup-id "xrandr --output DP-0 --auto --primary --output HDMI-0 --off"
+
+# start fileManager
+bindsym $mod+Shift+f    exec $fileManager
+
+# sticky window
+#bindsym $mod+Shift+s sticky toggle
+
+# screenshot focused window
+bindsym Print 		    exec scrot ~/Pictures/Screenshots/%F_%H:%M:%S.png -q 100 -u
+
+# screenshot all
+bindsym Shift+Print 	exec scrot ~/Pictures/Screenshots/%F_%H:%M:%S.png -q 100
+
+# volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+
+# mute
+bindsym XF86AudioMute   exec amixer sset Master toggle && killall -USR1 i3blocks
+bindsym $mod+m 		    exec amixer sset Master toggle && killall -USR1 i3blocks
+
+# Redirect sound to headphones
+#bindsym $mod+Shift+m exec "/usr/local/bin/switch-audio-port"
+
+# player control
+bindsym XF86AudioPlay   exec mocp --toggle-pause
+bindsym XF86AudioPause  exec mocp --toggle-pause
+bindsym XF86AudioStop   exec mocp --togle-pause
+bindsym XF86AudioNext   exec mocp --next
+bindsym XF86AudioPrev   exec mocp --previous
+
+# gestione luminosità (only for laptop)
+bindsym XF86MonBrightnessUp 	exec xbacklight -inc 10 
+bindsym XF86MonBrightnessDown 	exec xbacklight -dec 10
+
+
+
+
+#=============================================================================
+# I3 BINDING COMMANDS
+#=============================================================================
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run -config $HOME/github/dotfiles/rofi/config
+
+# switch to workspace
+bindcode $mod+49 workspace $ws_msg
+bindsym $mod+1 workspace $ws_terminal
+bindsym $mod+2 workspace $ws_code
+bindsym $mod+3 workspace $ws_browser
+bindsym $mod+4 workspace $ws_fileManager
+bindsym $mod+5 workspace $ws_office
+bindsym $mod+6 workspace $ws_paint
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace $ws_comunication
+bindsym $mod+0 workspace $ws_music
+
+# move focused container to workspace
+bindcode $mod+Shift+49 move container to workspace $ws_msg
+bindsym $mod+Shift+1 move container to workspace $ws_terminal
+bindsym $mod+Shift+2 move container to workspace $ws_code
+bindsym $mod+Shift+3 move container to workspace $ws_browser
+bindsym $mod+Shift+4 move container to workspace $ws_fileManager
+bindsym $mod+Shift+5 move container to workspace $ws_office
+bindsym $mod+Shift+6 move container to workspace $ws_paint
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace $ws_comunication
+bindsym $mod+Shift+0 move container to workspace $ws_music
+
+# change focus
+bindsym $mod+Left focus $left
+bindsym $mod+Down focus $down
+bindsym $mod+Up focus $up
+bindsym $mod+Right focus $right
+
+# move focused window
+bindsym $mod+Shift+Left move $left
+bindsym $mod+Shift+Down move $down
+bindsym $mod+Shift+Up move $up
+bindsym $mod+Shift+Right move $right
+
+# start a terminal
+bindsym $mod+Return exec $terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+#bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym Right resize shrink width   $pixelResize px or $pixelResize ppt
+        bindsym Up resize grow height       $pixelResize px or $pixelResize ppt
+        bindsym Down resize shrink height   $pixelResize px or $pixelResize ppt
+        bindsym Left resize grow width      $pixelResize px or $pixelResize ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+
+
+#===============================================================
+# ESCAPE COMMANDS
+#===============================================================
+# Set shut down, restart and locking features
+set $mode_system (l)ock, (e)xit, (r)eboot, (s)hutdown
+bindsym $mod+Escape mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock --color 475263
+    bindsym e exec --no-startup-id i3-msg exit
+    bindsym r exec --no-startup-id reboot
+    bindsym s exec --no-startup-id poweroff
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# poweroff
+bindsym $mod+F4 exec poweroff
+
+# lock
+bindsym $mod+Shift+x exec i3lock --color 475263
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+
+
+#=============================================================================
+# I3 COLORS
+#=============================================================================
+set $bg-color            #555555
+set $inactive-bg-color   #222222
+set $text-color          #f3f4f5
+set $inactive-text-color #676e7d
+set $urgent-bg-color     #771111
+set $indicator-color     #a0a0a0
+
+# set window colors     border             background         text                 indicator
+client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
+client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
+
+
+#=============================================================================
+# PROGRAMS LIST USED ON ANTERGOS
+#=============================================================================
+# telegram
+# chromium -> chromium-widevine (per netflix)
+# discord
+# libreOffice
+# redshift -> blue filter
+# pcmanfm -> fileManager defaultAntergos
+# scrot -> screnshot defaultAntergos
+# inkscape -> paint
+# gimp -> paint
+# termite -> terminale
+# yay -> AUR helper
+# discord -> yay -S --needed --noconfirm --mflags --nocheck libc++abi libc++ discord
+# evince -> pdf viewer
+# cups -> printer
+# system-config-printer -> manager per configurare la stampante
+# arduino
+# cura
+# spotify -> yay -S spotify-stable --needed --noconfirm
+# bluez + blueman -> bluetooth manager
+# neofetch -> new screenfetch (che visualizza informazioni)
+# udiskie -> automonter usb
+
+
+

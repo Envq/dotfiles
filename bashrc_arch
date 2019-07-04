@@ -1,0 +1,47 @@
+#
+# ~/.bashrc
+#
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#ALIAS
+alias ls='ls --color=auto'
+alias ll="ls -alF"
+alias la='ls -A'
+alias l='ls -CF'
+alias vim='nvim'
+
+
+# SETTINGS PROMPT
+color0='\[\e[0m\]'		# standard
+color1='\[\e[1;31m\]'		# rosso
+color2='\[\e[0;32m\]'        	# green
+color3='\[\e[0;36m\]'         	# ciano
+color4='\[\e[0;33m\]'       	# Giallo
+
+#PS1='[\u@\h \W]\$ '
+PS1="$color1\u$color2|\h $color3[\w] \n$color4└─ \$ ▶$color0 "
+
+
+
+
+
+
+if [ -e ~/.bashrc.aliases ] ; then
+   source ~/.bashrc.aliases
+fi
+
+# >>> Added by cnchi installer
+BROWSER=/usr/bin/chromium
+EDITOR=/usr/bin/nvim
+
+export PATH=$PATH:/usr/local/bin
+#export PATH=$PATH:$HOME/.local/bin
+
+
