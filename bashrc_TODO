@@ -1,0 +1,34 @@
+# This file contains utility for file .bashrc
+
+
+
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+
+if [ -e ~/.bashrc.aliases ] ; then
+   source ~/.bashrc.aliases
+fi
+
+
+#ALIAS
+alias ls='ls --color=auto'
+alias ll="ls -alF"
+alias la='ls -A'
+alias l='ls -CF'
+alias vim='nvim'
+
+
+
+# SETTINGS PROMPT
+color0='\[\e[0m\]'		    # standard
+color1='\[\e[1;31m\]'		# rosso
+color2='\[\e[0;32m\]'       #green
+color3='\[\e[0;36m\]'       # ciano
+color4='\[\e[0;33m\]'       # Giallo
+
+# PROMPT
+PS1="$color1\u$color2|\h $color3[\w] \n$color4└─ \$ ▶$color0 "

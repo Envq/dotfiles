@@ -54,7 +54,7 @@ set mouse=a 			    "enable mouse
 set clipboard+=unnamedplus	"enable clipboard
 
 "to disable highlight
-"nnoremap <CR> :noh<CR><ESC>
+nnoremap <CR> :noh<CR><ESC>
 "nnoremap <F9> :!make execute<CR>
 "nnoremap <F10> :make
 
