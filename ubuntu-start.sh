@@ -27,7 +27,7 @@ echo "remember to do ':PlugInstall' in vim"
 
 
 # PROGRAMS
-sudo apt install postgresql terminator chromium-browser dia inkscape gimp 
+sudo apt install terminator chromium-browser dia inkscape gimp #postgresql
 
 
 # PYTHON
@@ -58,5 +58,18 @@ sudo snap install code --classic
 
 
 
-
-# SETTINGS
+# VSCODE EXTENSION:
+#c/c++ -> microsoft
+#c/c++ snippets -> harsh
+#c++ intellisense -> austin
+#clang-format -> xaver
+#cmake -> twxs
+#doxgen documentation -> christoph schlosser
+#git history -> don jayamanne
+#gruvbox mirror -> adamsome
+#html css support -> ecmel
+#platformio ide -> platformIO
+#postgresql -> microsoft
+#python -> microsoft
+#ros -> microsoft
+#vscode-icons -> icons for visual studio code
