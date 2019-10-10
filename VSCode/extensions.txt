@@ -1,0 +1,16 @@
+c/c++                   -> microsoft
+c/c++ snippets          -> harsh
+c++ intellisense        -> austin
+clang-format            -> xaver
+cmake                   -> twxs
+doxgen documentation    -> christoph schlosser
+git history             -> don jayamanne
+gruvbox mirror          -> adamsome
+html css support        -> ecmel
+platformio ide          -> platformIO
+postgresql              -> microsoft
+python                  -> microsoft
+ros                     -> microsoft
+urdf                    -> smilerobotics
+vscode-icons            -> icons for visual studio code
+xml format              -> mike burgh

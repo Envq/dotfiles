@@ -1,75 +1,59 @@
 #!/bin/bash
 
 # UPDATE
-echo "Update"
+echo "==> Update"
 sudo apt update
 
 
 # MAIN TOOLS
-echo "download main tools"
-sudo apt install git cmake ranger neofetch 
+echo "==> Download main tools"
+sudo apt install git cmake ranger neofetch python3-pip
+#pip3 install --user psycopg2 psycopg2-binary flask 
 
 
 # CONFIG
-echo "download git dotfiles"
-mkdir github
+echo "==> Download git dotfiles"
+mkdir -p github
 git clone https://github.com/Envq/dotfiles.git
-pu
+
 
 # NEOVIM
-echo "install neovim"
+echo "==> Install neovim"
 sudo apt install neovim
-echo "install vim-plug"
+echo "====> Install vim-plug"
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "mv nvim config folder"
-mv $HOME/github/dotfiles/nvim $HOME/.config/
-echo "remember to do ':PlugInstall' in vim"
+echo "====> Copy nvim config folder"
+cp $HOME/github/dotfiles/nvim $HOME/.config/
+echo "====> Remember to do ':PlugInstall' in vim"
+sleep 1
 
 
 # PROGRAMS
-sudo apt install terminator chromium-browser dia inkscape gimp #postgresql
+echo "==> Install other programs"
+sudo apt install terminator chromium-browser dia inkscape
 
 
-# PYTHON
-sudo apt install python3-pip
-pip3 install --user psycopg2 psycopg2-binary flask 
-
-
-# REMEMBER TO INSTALL
-echo "Rember to install:"
-echo "telegram"
-echo "visual studio code"
-echo "spotify"
-echo "discord"
-
-
-
-# SNAP INSTALL
-echo "Install snap"
+# SNAPS
+echo "==> Install snap"
 sudo apt install snapd
-echo "Install telegram"
-sudo snap install telegram-desktop #Also in appCenter
-echo "Install spotify"
-sudo snap install spotify
-echo "Install discord"
-sudo snap install discord
-echo "Install Visual Studio Code"
-sudo snap install code --classic
 
 
+# INSTALL SNAP PROGRAMS?
+echo -n "==> You want install snap programs (telegram-spotify-vscode)?"
+echo -n "==> [y to yes]"
+read FLAG
+if [ ${FLAG} = "y" ]
+then
+    echo "====> Install telegram"
+    sudo snap install telegram-desktop
+    echo "====> Install spotify"
+    sudo snap install spotify
+    echo "====> Install Visual Studio Code"
+    sudo snap install code --classic
+    #echo "====> Install discord"
+    #sudo snap install discord
+fi
 
-# VSCODE EXTENSION:
-#c/c++ -> microsoft
-#c/c++ snippets -> harsh
-#c++ intellisense -> austin
-#clang-format -> xaver
-#cmake -> twxs
-#doxgen documentation -> christoph schlosser
-#git history -> don jayamanne
-#gruvbox mirror -> adamsome
-#html css support -> ecmel
-#platformio ide -> platformIO
-#postgresql -> microsoft
-#python -> microsoft
-#ros -> microsoft
-#vscode-icons -> icons for visual studio code
+
+# FINISH
+echo "==> Finish"

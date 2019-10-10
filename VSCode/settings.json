@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Gruvbox Minor Dark Medium",
+    "workbench.iconTheme": "vscode-icons",
+    "git.enableSmartCommit": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "extensions.ignoreRecommendations": false,
+    "explorer.confirmDelete": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "ros.distro": "melodic",
+    "git.confirmSync": false
+}

@@ -1,0 +1,231 @@
+[/]
+desktop-effects-unmaximize-transition='easeNone'
+extension-cache-updated=1567688689
+desktop-effects-maximize-transition='easeInExpo'
+applet-cache-updated=1568995285
+workspace-osd-visible=false
+desktop-effects-map-effect='traditional'
+command-history=['terminator', 'melange', 'cinnamon-settings-users ', 'spotify', 'cinnamon-settings', 'firefox', 'telegram-desktop', 'dia', 'chromium-browser', 'code']
+hotcorner-layout=['expo:false:0', 'scale:false:0', 'scale:false:0', 'desktop:false:0']
+desktop-effects-close-effect='traditional'
+workspace-osd-duration=400
+enabled-desklets=@as []
+desktop-effects-unmaximize-time=100
+desktop-effects-map-time=100
+panel-zone-icon-sizes='[{"panelId":1,"left":0,"center":0,"right":24},{"panelId":2,"left":0,"center":0,"right":0}]'
+desktop-effects-minimize-effect='traditional'
+desklet-snap=true
+alttab-switcher-style='icons+preview'
+panels-height=['1:37', '2:30']
+app-menu-label=''
+desklet-snap-interval=25
+next-applet-id=69
+desktop-effects-map-transition='easeOutQuad'
+desklet-decorations=0
+desktop-effects-unmaximize-effect='none'
+panel-launchers=['DEPRECATED']
+desktop-effects-tile-transition='easeInQuad'
+panels-enabled=['1:0:bottom', '2:0:top']
+desktop-effects-maximize-time=100
+desktop-effects-maximize-effect='none'
+enabled-applets=['panel2:left:0:menu@cinnamon.org:26', 'panel1:right:4:show-desktop@cinnamon.org:27', 'panel2:right:6:keyboard@cinnamon.org:30', 'panel2:right:8:removable-drives@cinnamon.org:32', 'panel2:right:7:network@cinnamon.org:33', 'panel2:right:5:sound@cinnamon.org:34', 'panel2:right:4:power@cinnamon.org:35', 'panel2:center:0:calendar@cinnamon.org:38', 'panel1:center:0:grouped-window-list@cinnamon.org:40', 'panel2:right:9:notifications@cinnamon.org:41', 'panel2:right:10:user@cinnamon.org:51', 'panel1:left:1:workspace-switcher@cinnamon.org:60', 'panel1:right:2:cpu-monitor-text@gnemonix:63', 'panel1:right:3:spacer@cinnamon.org:64', 'panel2:right:3:redshift@marvel4u:65', 'panel2:right:0:systray@cinnamon.org:67']
+desktop-effects-minimize-time=160
+alttab-switcher-delay=100
+desktop-effects-tile-effect='none'
+desktop-effects-close-transition='easeOutQuad'
+enabled-extensions=['transparent-panels@germanfr', '!workspace-grid@daemonl', '!workspace-grid@daemonl', '!workspace-names-updater@workspace-manager.gitlab.io']
+desktop-effects-minimize-transition='easeInQuad'
+panel-edit-mode=false
+panels-show-delay=['1:0', '2:0']
+desklet-cache-updated=1567688664
+desktop-effects-close-time=120
+next-desklet-id=7
+panels-hide-delay=['1:0', '2:0']
+workspace-expo-view-as-grid=true
+show-snap-osd=true
+workspace-osd-y=50
+desktop-effects-tile-time=100
+panels-autohide=['1:false', '2:false']
+workspace-osd-x=50
+
+[muffin]
+tile-hud-threshold=25
+tile-maximize=false
+resize-threshold=24
+snap-modifier='Control'
+workspace-cycle=true
+edge-tiling=true
+
+[desktop/interface]
+text-scaling-factor=1.25
+cursor-size=24
+first-day-of-week=1
+cursor-theme='DMZ-White'
+toolkit-accessibility=false
+clock-show-seconds=false
+gtk-theme-backup='Mint-Y-Dark-Pink'
+cursor-blink-time=1200
+icon-theme='Mint-Y-Dark-Pink'
+icon-theme-backup='Mint-Y-Dark-Pink'
+gtk-theme='Mint-Y-Dark-Pink'
+clock-show-date=true
+
+[desktop/keybindings]
+looking-glass-keybinding=['<Primary><Alt>Delete']
+custom-list=@as []
+show-desklets=@as []
+
+[desktop/keybindings/media-keys]
+screenshot-clip=@as []
+video-outputs=['XF86Display']
+area-screenshot-clip=['Print']
+screenshot=['<Primary>Print']
+logout=@as []
+terminal=['<Super>Return']
+window-screenshot-clip=@as []
+window-screenshot=@as []
+shutdown=['<Super>F4', 'XF86PowerOff']
+search=['XF86Search']
+home=['<Super>f', 'XF86Explorer']
+screensaver=['<Super>l', 'XF86ScreenSaver']
+area-screenshot=['<Shift>Print']
+restart-cinnamon=@as []
+
+[desktop/keybindings/wm]
+push-snap-left=@as []
+switch-to-workspace-up=['<Control><Alt>Up']
+move-to-monitor-right=@as []
+move-to-workspace-10=['<Shift><Super>equal']
+push-snap-right=@as []
+begin-move=['<Super>m']
+switch-to-workspace-10=['<Super>0']
+push-tile-right=['<Super>Right']
+switch-to-workspace-1=['<Super>1']
+panel-run-dialog=['<Shift><Super>d']
+move-to-monitor-left=@as []
+push-snap-up=@as []
+show-desktop=@as []
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-7=['<Super>7']
+maximize=@as []
+switch-to-workspace-6=['<Super>6']
+begin-resize=['<Super>r']
+push-tile-left=['<Super>Left']
+push-tile-up=['<Super>Up']
+toggle-maximized=['<Shift><Super>Up']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
+switch-to-workspace-5=['<Super>5']
+toggle-recording=@as []
+toggle-fullscreen=['<Shift><Super>f']
+push-snap-down=@as []
+switch-to-workspace-down=['<Primary><Alt>Down']
+move-to-workspace-1=['<Shift><Super>exclam']
+move-to-workspace-2=['<Shift><Super>quotedbl']
+move-to-workspace-3=['<Shift><Super>sterling']
+move-to-workspace-4=['<Shift><Super>dollar']
+move-to-workspace-5=['<Shift><Super>percent']
+move-to-workspace-6=['<Shift><Super>ampersand']
+move-to-workspace-7=['<Shift><Super>slash']
+move-to-workspace-8=['<Shift><Super>parenleft']
+move-to-workspace-9=['<Shift><Super>parenright']
+move-to-monitor-down=@as []
+activate-window-menu=@as []
+unmaximize=@as []
+move-to-monitor-up=@as []
+close=['<Shift><Super>q']
+push-tile-down=['<Super>Down']
+
+[desktop/media-handling]
+autorun-never=false
+
+[desktop/applications/calculator]
+exec='gnome-calculator'
+
+[desktop/applications/terminal]
+exec='terminator'
+
+[desktop/session]
+idle-delay=uint32 0
+
+[desktop/notifications]
+bottom-notifications=false
+
+[desktop/wm/preferences]
+theme-backup='Mint-Y-Dark'
+theme='Mint-Y-Dark'
+num-workspaces=10
+visual-bell=false
+min-window-opacity=30
+button-layout='close,minimize,maximize:menu'
+workspace-names=['Telegram  ', 'Code      ', 'Browser   ', 'Workspace4', 'Workspace5', 'Workspace6', 'Workspace7', 'Workspace8', 'Skype     ', 'Spotify   ']
+audible-bell=false
+
+[desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
+[desktop/a11y/keyboard]
+mousekeys-init-delay=300
+mousekeys-max-speed=10
+mousekeys-accel-time=300
+bouncekeys-delay=300
+slowkeys-delay=300
+
+[desktop/a11y/mouse]
+secondary-click-enabled=false
+secondary-click-time=1.2
+dwell-time=1.2
+dwell-threshold=10
+dwell-click-enabled=false
+
+[desktop/sound]
+event-sounds=false
+
+[desktop/background]
+picture-uri='file:///home/envq/Pictures/wallpapers/wall-3.jpg'
+color-shading-type='horizontal'
+primary-color='#000000000000'
+picture-options='zoom'
+secondary-color='#a4a400000000'
+
+[desktop/background/slideshow]
+image-source='directory:///home/envq/Pictures/wallpapers'
+delay=15
+slideshow-enabled=true
+
+[theme]
+symbolic-relative-size=0.67000000000000004
+theme-cache-updated=1568653393
+name='Mint-Y-Dark-Pink'
+
+[settings-daemon/plugins/xsettings]
+buttons-have-icons=false
+menus-have-icons=true
+hinting='slight'
+
+[settings-daemon/peripherals/touchpad]
+motion-threshold=1
+
+[settings-daemon/peripherals/touchscreen]
+orientation-lock=true
+
+[settings-daemon/peripherals/keyboard]
+repeat-interval=uint32 30
+delay=uint32 500
+numlock-state='off'
+
+[settings-daemon/peripherals/mouse]
+drag-threshold=8
+custom-acceleration=false
+motion-threshold=1
+double-click=400
+
+[cinnamon-session]
+quit-time-delay=60
+
+[sounds]
+tile-enabled=false
+switch-enabled=false
