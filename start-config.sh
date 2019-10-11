@@ -1,63 +1,100 @@
 #!/bin/bash
 
+
+# UPDATE
+echo "##############"
+echo "##  Update  ##"
+echo "##############"
+sudo apt update
+
+
+# MAIN TOOLS
+echo "###########################"
+echo "##  Download main tools  ##"
+echo "##  -------------------  ##"
+echo "##  - git                ##"
+echo "##  - cmake              ##"
+echo "##  - ranger             ##"
+echo "##  - neofetch           ##"
+echo "##  - python3-pip        ##"
+echo "##  - conky-all          ##"
+echo "###########################"
+sudo apt install git cmake ranger neofetch python3-pip conky
+#pip3 install --user psycopg2 psycopg2-binary flask 
+
+
+# SOME PROGRAMS
+echo "##############################"
+echo "##  Download main programs  ##"
+echo "##  ----------------------  ##"
+echo "##  - terminator            ##"
+echo "##  - chromium              ##"
+echo "##  - dia                   ##"
+echo "##  - inkscape              ##"
+echo "##############################"
+sudo apt install terminator chromium-browser dia inkscape
+
+
+# NEOVIM
+echo "###################################"
+echo "##  Install neovim and vim-plug  ##"
+echo "##  ---------------------------  ##"
+echo "##  Remember to do:              ##"
+echo "## ':PlugInstall' in vim         ##"
+echo "###################################"
+sudo apt install neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+# SNAPS
+echo "####################"
+echo "##  Install snap  ##"
+echo "##  ------------  ##"
+sudo apt install snapd
+
+echo "==> You want install snap programs (telegram-spotify-vscode)?"
+echo "==> [y to yes]"
+read FLAG
+echo "####################"
+if [ ${FLAG} = "y" ]
+then
+    echo "==> Install telegram"
+    sudo snap install telegram-desktop
+    echo "==> Install spotify"
+    sudo snap install spotify
+    echo "==> Install Visual Studio Code"
+    sudo snap install code --classic
+    #echo "==> Install discord"
+    #sudo snap install discord
+fi
+
+
 # CHECK FOLDER
+echo "###################################################"
 echo "==> Your dotfiles folder is in ~/github/dotfiles ?"
 echo "==> [n to no]"
 read FLAG
 if [ ${FLAG} = "n" ]
 then
+    echo ""
     echo "====> Move it in ~/github/dotfiles"
     exit
 fi
-
-# UPDATE
-echo "==> Update"
-sudo apt update
+echo "###################################################"
 
 
-# MAIN TOOLS
-echo "==> Download main tools"
-sudo apt install git cmake ranger neofetch python3-pip
-#pip3 install --user psycopg2 psycopg2-binary flask 
-
-
-# NEOVIM
-echo "==> Install neovim"
-sudo apt install neovim
-echo "====> Install vim-plug"
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "====> Copy nvim config folder"
-cp $HOME/github/dotfiles/nvim $HOME/.config/
-echo "====> Remember to do ':PlugInstall' in vim"
-sleep 1
-
-
-# PROGRAMS
-echo "==> Install other programs"
-sudo apt install terminator chromium-browser dia inkscape
-
-
-# SNAPS
-echo "==> Install snap"
-sudo apt install snapd
-
-
-# INSTALL SNAP PROGRAMS?
-echo "==> You want install snap programs (telegram-spotify-vscode)?"
-echo "==> [y to yes]"
-read FLAG
-if [ ${FLAG} = "y" ]
-then
-    echo "====> Install telegram"
-    sudo snap install telegram-desktop
-    echo "====> Install spotify"
-    sudo snap install spotify
-    echo "====> Install Visual Studio Code"
-    sudo snap install code --classic
-    #echo "====> Install discord"
-    #sudo snap install discord
-fi
+# SET CONFIG NVIM
+echo "#####################"
+echo "##  Configuration  ##"
+echo "##  -------------  ##"
+echo "==> Nvim"
+cp -r $HOME/github/dotfiles/nvim $HOME/.config/
+echo "==> Terminator"
+cp -r $HOME/github/dotfiles/terminator $HOME/.config/
+echo "#####################"
 
 
 # FINISH
-echo "==> Finish"
+echo "##############"
+echo "##  Finish  ##"
+echo "##############"
