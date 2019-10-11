@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# CHECK FOLDER
+echo -n "==> Your dotfiles folder is in ~/github/dotfiles ?"
+echo -n "==> [n to no]"
+read FLAG
+if [ ${FLAG} = "n" ]
+then
+    echo "====> Move it in ~/github/dotfiles"
+    exit
+fi
+
 # UPDATE
 echo "==> Update"
 sudo apt update
@@ -9,12 +19,6 @@ sudo apt update
 echo "==> Download main tools"
 sudo apt install git cmake ranger neofetch python3-pip
 #pip3 install --user psycopg2 psycopg2-binary flask 
-
-
-# CONFIG
-echo "==> Download git dotfiles"
-mkdir -p github
-git clone https://github.com/Envq/dotfiles.git
 
 
 # NEOVIM
