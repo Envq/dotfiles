@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # CHECK FOLDER
-echo -n "==> Your dotfiles folder is in ~/github/dotfiles ?"
-echo -n "==> [n to no]"
+echo "==> Your dotfiles folder is in ~/github/dotfiles ?"
+echo "==> [n to no]"
 read FLAG
 if [ ${FLAG} = "n" ]
 then
@@ -43,8 +43,8 @@ sudo apt install snapd
 
 
 # INSTALL SNAP PROGRAMS?
-echo -n "==> You want install snap programs (telegram-spotify-vscode)?"
-echo -n "==> [y to yes]"
+echo "==> You want install snap programs (telegram-spotify-vscode)?"
+echo "==> [y to yes]"
 read FLAG
 if [ ${FLAG} = "y" ]
 then
