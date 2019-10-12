@@ -87,10 +87,20 @@ echo "###################################################"
 echo "#####################"
 echo "##  Configuration  ##"
 echo "##  -------------  ##"
+
 echo "==> Nvim"
 cp -r $HOME/github/dotfiles/nvim $HOME/.config/
+echo ">>> Remember to do ':PlugInstall' in vim"
+
 echo "==> Terminator"
 cp -r $HOME/github/dotfiles/terminator $HOME/.config/
+
+echo "==> VSCode"
+cp -r $HOME/github/dotfiles/VSCode/*.json $HOME/.config/Code/User/
+echo ">>> Remember to install extensions:"
+cat $HOME/github/dotfiles/VSCode/extensions.txt
+
+echo ">>> Remember to modify .bashrc"
 echo "#####################"
 
 

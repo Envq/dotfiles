@@ -64,15 +64,20 @@ cursor-theme='DMZ-White'
 toolkit-accessibility=false
 clock-show-seconds=false
 gtk-theme-backup='Mint-Y-Dark-Pink'
-cursor-blink-time=1200
+cursor-blink-time=521
 icon-theme='Mint-Y-Dark-Pink'
 icon-theme-backup='Mint-Y-Dark-Pink'
 gtk-theme='Mint-Y-Dark-Pink'
 clock-show-date=true
 
+[desktop/keybindings/custom-keybindings/custom0]
+binding=['<Super>F4']
+command='poweroff'
+name='istant poweroff'
+
 [desktop/keybindings]
 looking-glass-keybinding=['<Primary><Alt>Delete']
-custom-list=@as []
+custom-list=['custom0']
 show-desklets=@as []
 
 [desktop/keybindings/media-keys]
@@ -84,7 +89,7 @@ logout=@as []
 terminal=['<Super>Return']
 window-screenshot-clip=@as []
 window-screenshot=@as []
-shutdown=['<Super>F4', 'XF86PowerOff']
+shutdown=['<Super>Escape', 'XF86PowerOff']
 search=['XF86Search']
 home=['<Super>f', 'XF86Explorer']
 screensaver=['<Super>l', 'XF86ScreenSaver']
@@ -185,16 +190,16 @@ dwell-click-enabled=false
 event-sounds=false
 
 [desktop/background]
-picture-uri='file:///home/envq/Pictures/wallpapers/wall-3.jpg'
+picture-uri='file:///usr/share/backgrounds/linuxmint-tara/jspires_waiting_for_the_waves.jpg'
 color-shading-type='horizontal'
 primary-color='#000000000000'
 picture-options='zoom'
 secondary-color='#a4a400000000'
 
 [desktop/background/slideshow]
-image-source='directory:///home/envq/Pictures/wallpapers'
+image-source='xml:///usr/share/cinnamon-background-properties/linuxmint-tara.xml'
 delay=15
-slideshow-enabled=true
+slideshow-enabled=false
 
 [theme]
 symbolic-relative-size=0.67000000000000004

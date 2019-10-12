@@ -1,0 +1,138 @@
+conky.config = {
+
+    -- WINDOW
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
+    own_window_transparent = true,
+    own_window_colour = black,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    border_width = 0,
+    stippled_borders = 0,
+    alignment = 'middle_middle',
+    background = true,
+    minimum_height = 700,
+	minimum_width = 700,
+    gap_x = 0,
+    gap_y = 10,
+    double_buffer = true,
+
+
+    -- COLORS
+	default_color = 'white',
+    default_outline_color = 'black',
+    default_shade_color = 'black',
+
+
+    -- DRAW
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = true,
+    
+    
+    -- GRAPHS
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    update_interval = 1.0,
+    show_graph_scale = false,
+    show_graph_range = false,
+
+
+    -- FONT
+    font = 'Raptor:size=10',
+    use_xft = true,
+    override_utf8_locale = true,
+    text_buffer_size = 256,
+    uppercase = true,
+    use_spacer = 'none',
+    --xftalpha = 0.1,
+    
+
+    -- DEBUG
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+}
+
+conky.text = [[
+# -- BACKGROUND
+${image ~/.config/conky/TC-100/images/background.png -s 700x700 -p 0,0}
+#
+#
+# -- CPU
+${goto 335}${voffset 88}${cpugraph 28,198 -l}${alignr 135}${if_match $cpu >= 10}${offset 10}${else}${offset 4}${endif}${voffset -15}${cpu}%
+${goto 335}${voffset 10}CPU USAGE: ${cpubar 10,104}
+#
+#
+# -- Information
+${goto 50}${voffset -14}${exec cat /etc/os-release | head -1 | cut -d '"' -f2}
+${goto 50}UPTIME: ${uptime}
+${goto 50}${exec lscpu | head -4 | tail -1 }
+${goto 50}${exec lscpu | head -16 | tail -1 }
+#
+#
+# -- Memory Graph
+${alignr 85}${voffset -6}${memgraph 30,120}
+${alignr 85}MEMORY: ${membar 10, 50}
+${alignr 85}${mem}
+#
+#
+# -- IO Disk Graphs
+${goto 64}${voffset 8}${diskiograph_read 30,100 -l}${goto 174}${diskiograph_write 30,100 -l}
+${goto 64}${voffset 2}DISK READ${goto 174}DISK WRITE
+${goto 64}${diskio_read}${goto 174}${diskio_write}
+#
+#
+# -- Processes and Threads Information
+${goto 174}${voffset 54}PROCESSES
+${goto 174}${running_processes}
+${goto 174}THREADS
+${goto 174}${running_threads}
+#
+#
+# -- Filesystem Usage
+${voffset -180}
+${alignr 155}${fs_bar 10,140}
+${alignr 155}Filesystem ${fs_size /}
+${voffset -90}
+${goto 580}USED ${fs_used}
+${goto 580}${fs_bar 10,100}
+${voffset 0}
+${goto 580}FREE ${fs_free}
+${goto 580}${fs_bar_free 10,100}
+#
+#
+# -- Network Graphs
+${goto 373}${voffset 32}${upspeedgraph eno1 30,100}${goto 493}${downspeedgraph eno1 30,100}
+${goto 373}UPLOAD ${upspeed eno1}${goto 495}DOWNLOAD ${downspeed eno1}
+#
+#
+# -- IP Information
+
+${goto 125}${voffset 27}External IP: ${execi 60 curl  ipinfo.io/ip}
+${goto 375}${voffset -18}LOCAL IP: ${addr eno1}
+]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
